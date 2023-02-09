@@ -1,6 +1,6 @@
 public static class Sorting
 {
-    public static void SortSelection(int[] inputArray)
+    public static int [] SortSelection(this int[] inputArray)
     {
         for (int i = 0; i < inputArray.Length - 1; i++)
         {
@@ -16,5 +16,6 @@ public static class Sorting
             inputArray[i] = inputArray[pos]; // минимальный элемент на i позицию
             inputArray[pos] = temp; // окончательно меняем местами числа
         }
+        return inputArray;
     }
 }
