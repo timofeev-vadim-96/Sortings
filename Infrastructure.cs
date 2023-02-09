@@ -6,7 +6,7 @@ public static class Infrastructure
     {
         return Enumerable.Range(1,size)
                         .Select (item => Random.Shared.Next(min,max))
-                        .ToArray;
+                        .ToArray();
     }
 
     public static void Show (int [] inputArray)
