@@ -1,8 +1,8 @@
 ﻿using static Sorting;
 using static Infrastructure;
 
-10.CreateArray()
+15.CreateArray()
   .Show(", ")
-  .BubbleSorting()
+  .QuickSort(0, 14)
   .Show(", ");
 

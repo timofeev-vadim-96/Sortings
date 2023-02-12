@@ -28,11 +28,51 @@ public static class Sorting
                 if (inputArray1[j] < inputArray1[j - 1])
                 {
                     int temp = inputArray1[j];
-                    inputArray1[j] = inputArray1[j-1];
-                    inputArray1[j-1] = temp;
+                    inputArray1[j] = inputArray1[j - 1];
+                    inputArray1[j - 1] = temp;
                 }
             }
         }
         return inputArray1;
+    }
+
+    public static int[] QuickSort(this int[] inputArray2, int leftBorder, int rightBorder)
+    {
+        int i = leftBorder;
+        int j = rightBorder;
+        int temp = 0;
+        int mid = ((leftBorder + rightBorder) / 2);
+        if (inputArray2[mid] < inputArray2[i])
+        {
+            temp = inputArray2[mid];
+            inputArray2[mid] = inputArray2[i];
+            inputArray2[i] = temp;
+        }
+        if (inputArray2[rightBorder] < inputArray2[leftBorder])
+        {
+            temp = inputArray2[rightBorder];
+            inputArray2[rightBorder] = inputArray2[leftBorder];
+            inputArray2[leftBorder] = temp;
+        }
+        if (inputArray2[rightBorder] < inputArray2[mid])
+        {
+            temp = inputArray2[rightBorder];
+            inputArray2[rightBorder] = inputArray2[mid];
+            inputArray2[mid] = temp;
+        }
+        int pivot = inputArray2[mid];
+        while (inputArray2[i] < pivot) i++;
+        while (inputArray2[j] > pivot) j--;
+        if (i <= j)
+        {
+            temp = inputArray2[i];
+            inputArray2[i] = inputArray2[j];
+            inputArray2[j] = temp;
+            i++;
+            j--;
+        }
+        if (i < rightBorder) QuickSort(inputArray2, i, rightBorder);
+        if (j > leftBorder) QuickSort(inputArray2, leftBorder, j);
+        return inputArray2;
     }
 }
