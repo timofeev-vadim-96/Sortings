@@ -2,13 +2,11 @@
 using static Infrastructure;
 using System.Diagnostics;
 using static System.Console;
-int[] array = CreateArray(10000, 0, 20);
+int[] array = CreateArray(15, 0, 999);
+Show (array);
+CountingSort (array);
+Show (array);
 // Show (array);
-Stopwatch sw = new Stopwatch();
-sw.Start();
-QSort (array, 0, array.Length-1);
-sw.Stop();
-WriteLine(sw.ElapsedMilliseconds);
 // Show(array);
 // 15.CreateArray()
 //   .Show(", ")

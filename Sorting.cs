@@ -83,6 +83,32 @@ public static class Sorting
         QSort(array, firstIndex, currentIndex - 1);
         QSort(array, currentIndex + 1, lastIndex);
     }
+    public static void CountingSort(int[] inputArray) // только для чисел и только >= 0
+    {
+        int max = int.MinValue; //определяем макс для величины массива
+        for (int i = 0; i < inputArray.Length; i++)
+        {
+            if (inputArray[i] > max) max = inputArray[i];
 
-
+        }
+        int[] assistArray = new int[max + 1];//длина массива +1, чтообы учесть 0 в качестве уникального числа
+        for (int j = 0; j < inputArray.Length; j++)
+        {
+            for (int l = 0; l < assistArray.Length; l++)
+            {
+                if (inputArray[j] == l) assistArray[l]++;// подсчитываем кол-во уникальных чисел соответственно 
+        // индекса в массиве (индекс массива = числу,
+        // а массив[индекс] = количество таких чисел в массиве)
+            }
+        }
+        int index = 0;
+        for (int m = 0; m < assistArray.Length; m++)// индекс - это и есть само число
+        {
+            for (int s = 0; s < assistArray[m]; s++)//колич-во раз, когда присвоится одно и тоже число
+            {
+                inputArray[index] = m;
+                index++;
+            }
+        }
+    }
 }
