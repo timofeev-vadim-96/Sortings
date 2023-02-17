@@ -2,7 +2,7 @@
 using static Infrastructure;
 using System.Diagnostics;
 using static System.Console;
-int[] array = CreateArray(15, 0, 20);
+int[] array = CreateArray(15, -20, 20);
 Show (array);
 CountingSort (array);
 Show (array);

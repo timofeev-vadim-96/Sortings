@@ -86,13 +86,9 @@ public static class Sorting
     }
     public static void CountingSort(int[] inputArray) // только для чисел
     {
-        int max = int.MinValue; //определяем макс для величины массива
-        int min = int.MaxValue;
-        for (int i = 0; i < inputArray.Length; i++)
-        {
-            if (inputArray[i] > max) max = inputArray[i];
-            if (inputArray[i] < min) min = inputArray[i];
-        }
+        // Опред. мин и макс для величины массива
+        int max = inputArray.Max();
+        int min = inputArray.Min();
         int[] assistArray = new int[Abs(min) + max + 1];//длина массива +1, чтобы учесть 0 в качестве уникального числа
         for (int j = 0; j < inputArray.Length; j++)
         {
